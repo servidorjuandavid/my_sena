@@ -1,28 +1,27 @@
 <h1>ESTUDIANTES ASDI 2019 RUBEN</h1>
-
-
 <table border="1ptx">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Fecha de nacimiento</th>
-            <th>Programa</th>
-        </tr>
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Correo</th>
+			<th>Fecha de nacimiento</th>
+			<th>Programa</th>
+		</tr>
         
-    </thead>
+	</thead>
 
 
-    <tbody> 
+	<tbody> 
 
-        <% @students.each do |student|%>
-        <tr>
-            <td><%= student.nombre %></td>
-            <td><%=student.correo%></td>
-            <td><%=student.fecha_nacimiento%></td>
-            <td><%=student.programa%></td>
-        </tr>
-        <% end %>
+		<% @students.each do |student|%>
+		<tr>
+			<td><%= student.nombre %></td>
+			<td><%=student.correo%></td>
+			<td><%=student.fecha_nacimiento%></td>
+			<td><%=student.programa%></td>
+            
+		</tr>
+	<% end %>
         
-    </tbody>
+	</tbody>
 </table>

@@ -1,0 +1,29 @@
+<h1>PROFESORES ASDI 2019 RUBEN</h1>
+
+
+<table border="1ptx">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Profesor Area</th>
+        </tr>
+        
+    </thead>
+
+
+    <tbody> 
+
+        <% @teachers.each do |teacher|%>
+        <tr>
+            <td><%=teacher.nombre %></td>
+            <td><%=teacher.correo%></td>
+            <td><%=teacher.fecha_nacimiento%></td>
+            <td><%=teacher.programa%></td>
+            
+        </tr>
+        <% end %>
+        
+    </tbody>
+</table>
