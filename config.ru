@@ -1,5 +1,5 @@
 require "sinatra"
-
+require "csv"
 
 APP_ROOT = File.dirname(__FILE__)
 
