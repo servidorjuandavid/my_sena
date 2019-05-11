@@ -6,6 +6,9 @@
 			<th>Correo</th>
 			<th>Fecha de nacimiento</th>
 			<th>Programa</th>
+			<th>Ver</th>
+			<th>Actualizar</th>
+			<th>Borrar</th>
 		</tr>
         
 	</thead>
@@ -19,6 +22,11 @@
 			<td><%=student.correo%></td>
 			<td><%=student.fecha_nacimiento%></td>
 			<td><%=student.programa%></td>
+			<td><button type="button"
+                            class="btn btn-primary">Ver</button></a></td>
+                        <td><button type="button" class="btn btn-warning">Editar</button>
+                        <td><button type="button" class="btn btn-danger">Eliminar</button>
+                         </td>
             
 		</tr>
 	<% end %>
