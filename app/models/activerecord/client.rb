@@ -12,8 +12,7 @@ module ActiveRecord
         end
         
         def execute_query(query)
-            connection.exec(query).values
-
+            connection.exec(query)
         end
     end
     

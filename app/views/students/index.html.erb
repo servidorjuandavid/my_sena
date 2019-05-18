@@ -2,13 +2,12 @@
 <table border="1ptx">
 	<thead>
 		<tr>
+			<th>Id</th>
 			<th>Nombre</th>
 			<th>Correo</th>
 			<th>Fecha de nacimiento</th>
 			<th>Programa</th>
-			<th>Ver</th>
-			<th>Actualizar</th>
-			<th>Borrar</th>
+		
 		</tr>
         
 	</thead>
@@ -18,20 +17,26 @@
 
 		<% @students.each do |student|%>
 		<tr>
+			<td><%= student.id %></td>
 			<td><%= student.nombre %></td>
 			<td><%=student.correo%></td>
-			<td><%=student.fecha_nacimiento%></td>
+			<td><%=student.fecha%></td>
 			<td><%=student.programa%></td>
-			<td><button type="button"
-                            class="btn btn-primary">Ver</button></a></td>
-                        <td><button type="button" class="btn btn-warning">Editar</button>
-                        <td><button type="button" class="btn btn-danger">Eliminar</button>
-                         </td>
+			<td>
+			<a href= "/students/<%= student.id%>">Ver</a>
+			
+			<form action="/students/<%= student.id%>" method="post">
+				<input name="_method" type="hidden" value="delete" >
+				<input type="submit" value="Borrar" >
+			</form>
+			</td>
+			
             
 		</tr>
 	<% end %>
         
 	</tbody>
-</table></br>
+</table>
+</br>
 
 <a href="/students/new"> Crear Estudiante</a>

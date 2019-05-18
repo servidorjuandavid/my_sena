@@ -1,20 +1,20 @@
 class StudentsController < ApplicationController
+
+    # Construimos la ruta por la cual se cargaran las vistas
     Tilt.register Tilt::ERBTemplate, 'html.erb'
 
     set :views, File.join(APP_ROOT, 'app', 'views', 'students')
 
     #GET /students
     get "/" do 
-        @students = Student.all
+        @students = Student.all  #llamamos al metodo all de la clase Student
         erb :index
     end
 
     # Post recibe parametros
     post '/' do
-        student = Student.new(student_params)
-
-        student.save
-        
+        Student.create(student_params)
+       
         redirect '/students'
     end
 
@@ -28,12 +28,27 @@ class StudentsController < ApplicationController
 
     #GET /usuarios/id
     get "/:id" do
-        id=params[:id].to_i
-        @student = Student.all[id]
+        id=params[:id]
+        @student = Student.find(id)
         erb :show
     end
 
-   
+    post '/' do
+        Student.create(student_params)
+        redirect 'students'
+        
+    end
+
+    delete '/:id' do
+        
+        Student.destroy(params[:id])
+
+        redirect "/students"
+        
+    end
+
+    #me devuelve los parametros que vienen desde new.html.erb
+    
     def student_params
         params[:student]
     end
